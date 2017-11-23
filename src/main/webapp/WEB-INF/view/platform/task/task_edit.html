@@ -1,0 +1,26 @@
+@layout("/common/_curd/_container.html"){
+
+	<form data-url="${basePath}/${code}/update" method="post" class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _table="task";
+		@ var _key="id";
+		@ var _col=[
+@			  {name:"业务id", index:"id", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"任务名称", index:"name", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"任务完成周期", index:"dev_time", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"用户id", index:"user_id", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"发布地址", index:"address", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"类型", index:"type", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"相关描述", index:"desc", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"价格", index:"price", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"0:未删除 1:删除", index:"del_status", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"创建时间", index:"create_time", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"修改时间", index:"update_time", type:"text",newline:true,length:8,required:"required"}		
+		@		   ];
+		@ include("/common/_curd/_edit.html", {"col":_col, "table":_table, "key":_key}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_save:"修改", btn_close:"关闭"}) {}
+	</form>
+
+@}

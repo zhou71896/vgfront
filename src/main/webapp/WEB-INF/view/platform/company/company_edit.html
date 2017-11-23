@@ -1,0 +1,23 @@
+@layout("/common/_curd/_container.html"){
+
+	<form data-url="${basePath}/${code}/update" method="post" class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _table="company";
+		@ var _key="id";
+		@ var _col=[
+		@			  {name:"业务编号", index:"id", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"公司名称", index:"name", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"产品id", index:"product_id", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"用户id", index:"user_id", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"公司地址", index:"address", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"公司类型", index:"type", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"公司描述", index:"desc", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"联系电话", index:"mobile", type:"text",newline:true,length:8,required:"required"}
+		@		   ];
+		@ include("/common/_curd/_edit.html", {"col":_col, "table":_table, "key":_key}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_save:"修改", btn_close:"关闭"}) {}
+	</form>
+
+@}

@@ -1,3 +1,3 @@
 list
 ===
-select * from user
+select * from customer
